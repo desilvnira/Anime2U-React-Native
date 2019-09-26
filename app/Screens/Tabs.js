@@ -5,7 +5,7 @@ import {
   StyleSheet,
   Alert, Button, FlatList, ScrollView
 } from "react-native";
-import { Icon, SearchBar, Tile, Header, Card,Divider, Badge} from 'react-native-elements'
+import { SearchBar, Tile, Header, Card,Divider, Badge} from 'react-native-elements'
 import { createBottomTabNavigator } from 'react-navigation-tabs'
 import {ProfileCard} from '../Components/ProfileCard';
 import { NewsCard } from "../Components/NewsCard";
@@ -13,6 +13,7 @@ import {firebaseAuth} from '../Components/Firebase'
 import RNPickerSelect from 'react-native-picker-select';
 import Dialog, { DialogContent } from 'react-native-popup-dialog';
 import * as firebase from "firebase"
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export class News extends Component {
     
@@ -294,7 +295,7 @@ export class Profile extends Component {
       <View style={styles.container}>
         
         <ScrollView>          
-        <Text style={{textAlign:'right'}} onPress = {this.logoutPressed}>Logout</Text>
+        <Icon name='sign-out' onPress = {this.logoutPressed} size={24} />
         <ProfileCard
           name={this.state.name}
           city={this.state.city}
@@ -501,7 +502,7 @@ export default createBottomTabNavigator({
     navigationOptions: {
       tabBarLabel: 'News',
       tabBarIcon: ({ tintColor }) => (
-        <Icon name='heartbeat' color={tintColor} size={24} />
+        <Icon name="rocket" size={24} color={tintColor}  />
       )
     }
   },
@@ -510,7 +511,7 @@ export default createBottomTabNavigator({
     navigationOptions: {
       tabBarLabel: 'Profile',
       tabBarIcon: ({ tintColor }) => (
-        <Icon name='football' color={tintColor} size={24} />
+        <Icon name='address-card' color={tintColor} size={24} />
       )
     }
   },
@@ -520,13 +521,13 @@ export default createBottomTabNavigator({
     navigationOptions: {
       tabBarLabel: 'Search',
       tabBarIcon: ({ tintColor }) => (
-        <Icon name='heartbeat' color={tintColor} size={24} />
+        <Icon name='search' color={tintColor} size={24} />
       )
     }
   }
 
 }, {//router config
-    initialRouteName: 'Profile',
+    initialRouteName: 'News',
     order: ['News', 'Profile', 'Search'],
     //navigation for complete tab navigator
     navigationOptions: {

@@ -7,6 +7,7 @@ import Tabs from './app/Screens/Tabs';
 import Watching from './app/Screens/Watching';
 import Completed from './app/Screens/Completed';
 import YetToWatch from './app/Screens/YetToWatch';
+console.disableYellowBox = true;
 
 const MainNavigator = createStackNavigator({
   Home: {screen: HomeScreen},

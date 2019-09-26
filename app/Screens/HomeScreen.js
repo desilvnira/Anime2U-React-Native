@@ -12,6 +12,10 @@ import {
 
 class HomeScreen extends Component {
 
+    static navigationOptions = {
+      header: null
+    }
+
     /**
      * Navigates to the register page when button is pressed
      */
